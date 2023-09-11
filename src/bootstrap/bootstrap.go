@@ -10,7 +10,7 @@ import (
 	"github.com/assimon/luuu/util/log"
 )
 
-//Start 服务启动
+// Start 服务启动
 func Start() {
 	// 配置加载
 	config.Init()
@@ -18,6 +18,7 @@ func Start() {
 	log.Init()
 	// Mysql启动
 	dao.MysqlInit()
+	dao.MdbTableInit()
 	// redis启动
 	dao.RedisInit()
 	// 队列启动
