@@ -9,6 +9,7 @@ import (
 
 var once sync.Once
 
+// 自动建表
 func MdbTableInit() {
 	once.Do(func() {
 		if err := Mdb.AutoMigrate(&mdb.Orders{}); err != nil {
