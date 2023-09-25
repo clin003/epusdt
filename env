@@ -17,6 +17,20 @@ log_max_size=32
 log_max_age=7
 max_backups=3
 
+#数据库类型，默认为mysql类型，可配置项: postgres,mysql
+db_type=postgres
+
+# postgres配置
+postgres_host=127.0.0.1
+postgres_port=3306
+postgres_user=mysql账号
+postgres_passwd=mysql密码
+postgres_database=数据库
+postgres_table_prefix=
+postgres_max_idle_conns=10
+postgres_max_open_conns=100
+postgres_max_life_time=6
+
 # mysql配置
 mysql_host=127.0.0.1
 mysql_port=3306
