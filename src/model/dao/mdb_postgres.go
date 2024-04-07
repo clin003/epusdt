@@ -17,6 +17,7 @@ import (
 
 // PostgreSQLInit 数据库初始化
 func PostgreSQLInit() {
+	var err error
 	user := viper.GetString("postgres_user")
 	pass := viper.GetString("postgres_passwd")
 	host := viper.GetString("postgres_host")
@@ -25,7 +26,7 @@ func PostgreSQLInit() {
 	dsn := fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=disable TimeZone=Asia/Shanghai",
 		user, pass, host, port, dbname,
 	)
-	Mdb, err := gorm.Open(postgres.Open(dsn),
+	Mdb, err = gorm.Open(postgres.Open(dsn),
 		&gorm.Config{
 			NamingStrategy: schema.NamingStrategy{
 				TablePrefix:   viper.GetString("postgres_table_prefix"),
